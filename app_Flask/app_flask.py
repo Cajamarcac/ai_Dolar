@@ -1,0 +1,13 @@
+from flask import Flask, render_template
+import pandas as pd
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    df = pd.read_csv('valora_news.csv')
+    news = df.to_dict('records')
+    return render_template('index.html', news=news)
+
+if __name__ == '__main__':
+    app.run(debug=True)
