@@ -65,6 +65,7 @@ async def scrape_multiple_pages(base_url, num_pages):
 
 base_url = 'https://www.valoraanalitik.com/noticias-del-mercado-financiero'
 num_pages = 5
+
 news_titles, news_urls, news_dates = asyncio.run(scrape_multiple_pages(base_url, num_pages))
 
 # Combinar noticias con el mismo enlace web
