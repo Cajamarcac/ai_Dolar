@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Noticias del Mercado Financiero</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Noticias del Mercado Financiero</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha y Hora</th>
+                <th>Titular</th>
+                <th>Web</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in news %}
+            <tr>
+                <td>{{ item['Fecha y Hora'] }}</td>
+                <td>{{ item['Titular'] }}</td>
+                <td><a href="{{ item['Web'] }}" target="_blank">Enlace</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
